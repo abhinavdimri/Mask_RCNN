@@ -1891,9 +1891,9 @@ class MaskRCNN():
             layers = filter(lambda l: l.name not in exclude, layers)
         
         if by_name:
-            service.load_weights_from_hdf5_group_by_name(f, layers)
+            saving.load_weights_from_hdf5_group_by_name(f, layers)
         else:
-            service.load_weights_from_hdf5_group(f, layers)
+            saving.load_weights_from_hdf5_group(f, layers)
         if hasattr(f, 'close'):
             f.close()
 
